@@ -4,12 +4,15 @@ import { StyleSheet, Text, View, Button } from "react-native";
 
 export default function App() {
   const [name, setName] = useState("shaun");
+  const clickHandler = () => {
+    setName("chung-lee");
+  };
   return (
     <View style={styles.container}>
       <Text>my name is {name}</Text>
       <Text></Text>
       <View style={styles.buttonContainer}>
-        <Button title="update state" />
+        <Button title="update state" onPress={clickHandler} />
       </View>
     </View>
   );
@@ -22,5 +25,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  buttonContainer: {},
+  buttonContainer: {
+    marginTop: 20,
+  },
 });
